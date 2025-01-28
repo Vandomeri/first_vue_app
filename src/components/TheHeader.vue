@@ -1,10 +1,11 @@
 <script setup>
+import { useCartStore } from '@/stores/cartStore';
 import { RouterLink } from 'vue-router';
-
+const store = useCartStore()
 </script>
 
 <template>
-  <header>
+  <header class="rounded-xl">
     <div class="logo">LOGO</div>
 
     <nav>
@@ -12,6 +13,10 @@ import { RouterLink } from 'vue-router';
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/products">Products</RouterLink>
+      <RouterLink class="relative" to="/cart">
+        Cart
+        <div class="absolute -top-4 -right-4 bg-red-500 px-2">{{ store.cartCount }}</div>
+      </RouterLink>
 
     </nav>
   </header>

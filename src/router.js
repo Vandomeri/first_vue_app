@@ -40,6 +40,10 @@ const routes = [
         component: () => import('./pages/HelpGuaranteePage.vue')
       }
     ]
+  },
+  {
+    path: '/cart',
+    component: () => import('./pages/CartPage.vue')
   }
 ]
 
